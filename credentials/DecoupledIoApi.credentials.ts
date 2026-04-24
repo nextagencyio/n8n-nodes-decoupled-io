@@ -75,15 +75,26 @@ export class DecoupledIoApi implements ICredentialType {
 	}
 
 	/**
-	 * Credential test — hits the dashboard's `me` endpoint. Cheap,
-	 * exercises the auth path. If the token's invalid n8n will surface
-	 * "Authentication failed" inline in the credential dialog.
+	 * Credential test — hits the MCP server's `tools/list` JSON-RPC
+	 * method. Validates that the PAT is accepted by the server (server
+	 * returns 401 with a JSON-RPC error envelope on bad tokens, 200
+	 * with the tool list on good ones — both are valid JSON, which n8n
+	 * needs for the credential test to surface a clean error). The
+	 * dashboard side has no auth-validating JSON endpoint exposed
+	 * publicly, so MCP is the right target.
 	 */
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials.dashboardUrl}}',
-			url: '/api/users/me',
-			method: 'GET',
+			baseURL: '={{$credentials.mcpUrl}}',
+			url: '/',
+			method: 'POST',
+			body: {
+				jsonrpc: '2.0',
+				method: 'tools/list',
+				params: {},
+				id: 1,
+			},
+			json: true,
 		},
 	}
 }

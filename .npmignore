@@ -1,0 +1,19 @@
+# Build artifacts
+dist/tsconfig.tsbuildinfo
+dist/**/*.map
+dist/**/*.d.ts
+dist/package.json
+
+# Source (we ship dist only)
+nodes/
+credentials/
+test/
+
+# Dev tooling
+.github/
+.vscode/
+.eslintcache
+eslint.config.mjs
+tsconfig.json
+.prettierrc.js
+CODE_OF_CONDUCT.md

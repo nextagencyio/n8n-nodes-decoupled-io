@@ -32,7 +32,9 @@
 		"prepublishOnly": "n8n-node prerelease"
 	},
 	"files": [
-		"dist"
+		"dist/credentials/**/*.{js,svg}",
+		"dist/nodes/**/*.{js,svg}",
+		"dist/package.json"
 	],
 	"n8n": {
 		"n8nNodesApiVersion": 1,

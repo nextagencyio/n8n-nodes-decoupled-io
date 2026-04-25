@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-decoupled-io",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "n8n community node for Decoupled.io — read and write Drupal content, manage spaces and environment tiers, trigger workflows from content events.",
 	"license": "MIT",
 	"homepage": "https://decoupled.io/docs/integrations/n8n",
@@ -16,7 +16,7 @@
 	],
 	"author": {
 		"name": "Decoupled.io",
-		"email": "hello@decoupled.io"
+		"email": "jrcallicott@gmail.com"
 	},
 	"repository": {
 		"type": "git",

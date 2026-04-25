@@ -32,6 +32,7 @@ export class DecoupledDrupal implements INodeType {
 		displayName: 'Decoupled Drupal',
 		name: 'decoupledDrupal',
 		icon: 'file:DecoupledDrupal.svg',
+		iconColor: 'crimson',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
